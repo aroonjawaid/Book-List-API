@@ -7,5 +7,5 @@ app.use(express.json());
 app.use(router)
 
 app.listen(port, () => 
-console.log(`Example app listening at https://week-11-book-list-api-example.herokuapp.com:${port}`))
+console.log(`Example app listening at https://book-list-ap.herokuapp.com:${port}`))
 

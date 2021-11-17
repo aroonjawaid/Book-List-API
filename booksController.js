@@ -8,7 +8,7 @@ let idno = 0
 //Create book entry
 exports.create = function (req, res, next) {
   if (!req.body.title) {
-    return (next(createError(400, "title is required")))
+    return (next(createError(400, "title required")))
   }
   booklist.push({ id: idno, title: req.body.title, author: req.body.author,  read: req.body.read})
   res.send({ result: true })
@@ -33,7 +33,7 @@ exports.show = function (req, res, next) {
 exports.update = function (req, res, next) {
   const bookitem = booklist.find((book) => book.id == req.params.id)
   if (!bookitem) {
-    return (next(createError(404, "no todo with that id")))
+    return (next(createError(404, "no book with that id")))
   }
   booklist = booklist.map((book) => {
     if (book.id == req.params.id) {
